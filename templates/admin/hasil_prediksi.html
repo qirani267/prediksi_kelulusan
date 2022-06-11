@@ -1,0 +1,174 @@
+{% extends "admin/partials/base.html" %}
+{% block title %}Hasil Prediksi{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card card-borderless">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Nama Mahasiswa</label>
+                    <input type="text" class="form-control" name="nama" value="{{ nama }}" readonly placeholder="Masukkan Nama Mahasiswa">
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">NIM</label>
+                            <input type="text" class="form-control" name="nim" value="{{ nim }}" readonly placeholder="Masukkan NIM">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Umur</label>
+                            <input type="text" class="form-control" name="umur" value="{{ umur }}" readonly placeholder="Masukkan Umur">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <select class="form-select" name="jenis_kelamin" disabled>
+                                <option value="0" {% if jenis_kelamin == "0" %}selected=""{% endif %}>Laki-laki</option>
+                                <option value="1" {% if jenis_kelamin == "1" %}selected=""{% endif %}>Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">NIM</label>
+                            <input type="text" class="form-control" name="nim" value="{{ nim }}" readonly placeholder="Masukkan NIM">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Umur</label>
+                            <input type="text" class="form-control" name="umur" value="{{ umur }}" readonly placeholder="Masukkan Umur">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <select class="form-select" name="jenis_kelamin" disabled>
+                                <option value="0" {% if jenis_kelamin == "0" %}selected=""{% endif %}>Laki-laki</option>
+                                <option value="1" {% if jenis_kelamin == "1" %}selected=""{% endif %}>Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Domisili</label>
+                            <select class="form-select" name="domisili" required>
+                                <option value="1" {% if domisili=="1" %}selected="" {% endif %}>Tegal
+                                </option>
+                                <option value="2" {% if domisili=="2" %}selected="" {% endif %}>Brebes
+                                </option>
+                                <option value="3" {% if domisili=="3" %}selected="" {% endif %}>Pemalang
+                                </option>
+                                <option value="-999" {% if domisili=="-999" %}selected="" {% endif %}>Lainnya
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Status Sekolah</label>
+                            <select class="form-select" name="status_sekolah" required>
+                                <option value="0" {% if status_sekolah=="0" %}selected="" {% endif %}>Negeri
+                                </option>
+                                <option value="1" {% if status_sekolah=="1" %}selected="" {% endif %}>Swasta
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">Asal Sekolah</label>
+                            <select class="form-select" name="asal_sekolah" required>
+                                <option value="0" {% if asal_sekolah=="0" %}selected="" {% endif %}>SMA
+                                </option>
+                                <option value="1" {% if asal_sekolah=="1" %}selected="" {% endif %}>SMK
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-3">
+                            <label class="form-label">Kegiatan Organisasi</label>
+                            <select class="form-select" name="kegiatan_organisasi" required>
+                                <option value="0" {% if kegiatan_organisasi=="0" %}selected="" {% endif %}>Tidak</option>
+                                <option value="1" {% if kegiatan_organisasi=="1" %}selected="" {% endif %}>Ya</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="mb-3">
+                            <label class="form-label">Penghasilan Orang Tua</label>
+                            <select class="form-select" name="penghasilan_ortu" required>
+                                <option {% if penghasilan_ortu=="0" %}selected="" {% endif %} value="0">Rendah
+                                </option>
+                                <option {% if penghasilan_ortu=="1" %}selected="" {% endif %} value="1">Sedang
+                                </option>
+                                <option {% if penghasilan_ortu=="2" %}selected="" {% endif %} value="2">Tinggi
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="mb-3">
+                            <label class="form-label">IPs 1</label>
+                            <input type="text" class="form-control" name="ips1" readonly value="{{ ips1 }}" placeholder="X.XX">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="mb-3">
+                            <label class="form-label">IPs 2</label>
+                            <input type="text" class="form-control" name="ips2" readonly value="{{ ips2 }}" placeholder="X.XX">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="mb-3">
+                            <label class="form-label">IPs 3</label>
+                            <input type="text" class="form-control" name="ips3" readonly value="{{ ips3 }}" placeholder="X.XX">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="mb-3">
+                            <label class="form-label">IPs 4</label>
+                            <input type="text" class="form-control" name="ips4" readonly value="{{ ips4 }}" placeholder="X.XX">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="mb-3">
+                            <label class="form-label">IPs 5</label>
+                            <input type="text" class="form-control" name="ips5" readonly value="{{ ips5 }}" placeholder="X.XX">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="mb-3">
+                            <label class="form-label">IPs 6</label>
+                            <input type="text" class="form-control" name="ips6" readonly value="{{ ips6 }}" placeholder="X.XX">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <center>
+                    {% if hasil == "1" %}
+                    <p class="alert bg-success"> Lulus Tepat Waktu</p>
+                    {% endif %}
+    
+                    {% if hasil == "0" %}
+                    <p class="alert bg-danger"> Tidak Lulus Tepat Waktu</p>
+                    {% endif %}
+                    <a href="/admin/prediksi" class="btn btn-warning">Kembali</a>
+                </center>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

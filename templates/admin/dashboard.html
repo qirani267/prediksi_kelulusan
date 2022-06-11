@@ -1,0 +1,52 @@
+{% extends "admin/partials/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<!-- Page Content-->
+<div class="container-fluid">
+    <!-- Heading Row-->
+    <div class="row align-items-center">
+        <div class="col-lg-6"><img class="img-fluid rounded mb-4 mb-lg-0" src="{{ url_for('static', filename='img/heading1.jpg' ) }}" alt="..." style="width:600px;height: 300px;"/></div>
+        <div class="col-lg-6">
+            <h2 class="font-weight-light">Student Perfomance Prediksi Kelulusan Mahasiswa | Politeknik Harapan Bersama</h2>
+            <br>
+            <h4 class="font-weight-light">Website ini merupakan sistem yang dapat memprediksi kelulusan mahasiswa menggunakan analisis data mining menggunakan algoritma Decision Tree</h4>
+            <h4>
+                <p>Website ini dapat mengetahui mahasiswa lulus tepat waktu atau mahasiswa lulus tidak tepat waktu. </p></h4>
+            <a class="btn btn-primary" href="admin/prediksi"><i class="fa-solid fa-paper-plane"></i> Mulai Prediksi !</a>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content-->
+<section class="pt-4">
+    <div class="container-fluid">
+        <!-- Page Features-->
+        <div class="row gx-lg-6">
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <h2 class="fs-4 fw-bold">Dataset</h2>
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ url_for('static', filename='img/dataset.jpg' ) }}">
+                        <br>
+                        <br>
+                        <p class="mb-0">Dataset yang digunakan adalah dataset mahasiswa tahun ajaran 2015 sampai dengan tahun 2017 yang berjumlah 307 data dengan 176 mahasiswa yang lulus tepat waktu dan 130 yang lulus tidak tepat waktu. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <h2 class="fs-4 fw-bold">Modeling</h2>
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ url_for('static', filename='img/modeling.jpg' ) }}">
+                        <br>
+                        <br>
+                        <p class="mb-0">Modeling yang digunakan adalah Decision Tree. Algoritma machine learning mampu berpikir manusia saat membuat keputusan, sehingga mudah dimengerti Dan Logika dibalik decision tree dapat dengan mudah dipahami karena menunjukkan struktur seperti pohon.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
